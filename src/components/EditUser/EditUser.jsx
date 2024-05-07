@@ -74,16 +74,19 @@ function EditUser() {
 
          {showForm && (
             <form className="account-form" onSubmit={handleSubmit}>
-               <label>First Name:</label>
+               <label className='header'>First Name:</label>
                <input type="text" value={user.firstname} disabled />
 
-               <label>Last Name:</label>
+               <label className='header'>Last Name:</label>
                <input type="text" value={user.lastname} disabled />
 
-               <label>New Username:</label>
+               <label className='header'>New Username:</label>
                <input type="text" value={newUsername} onChange={handleInputChange} required />
-
-               <button type="transaction-button" className='transaction-button'>Confirm</button>
+               <div className='account'>
+               <button type="transaction-button" className='transaction-button'>Save</button>
+               <button className='transaction-button'>Cancel</button>
+               </div>
+               
             </form>
          )}
          <section className="account">

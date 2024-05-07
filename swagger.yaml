@@ -156,3 +156,78 @@ definitions:
     properties:
       userName:
         type: string
+/transactions:
+    get:
+      tags:
+        - Transactions Module
+      summary: Retrieve transactions
+      description: Retrieving all transactions for the month
+      parameters:
+        - in: query
+          name: accountId
+          type: string
+          required: false
+          description: Filter transactions by account
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Transactions retrieved successfully
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Transaction"
+        "400":
+          description: Invalid request parameters
+        "500":
+          description: Internal Server Error
+  /transactions/{transactionId}:
+    get:
+      tags:
+        - Transactions Module
+      summary: Transaction Details
+      description: Retrieving the summary of a transaction
+      parameters:
+        - in: path
+          name: transactionId
+          required: true
+          type: string
+          description: ID of the transaction to retrieve summary for
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Transaction summarys retrieved successfully
+          schema:
+            $ref: "#/definitions/TransactionDetails"
+        "404":
+          description: Transaction not found
+        "500":
+          description: Internal Server Error
+    put:
+      tags:
+        - Transactions Module
+      summary: Update Transaction
+      description: Updating information on a transaction
+      parameters:
+        - in: path
+          name: transactionId
+          required: true
+          type: string
+          description: ID of the transaction to update
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/TransactionUpdate"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Transaction updated successfully
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "404":
+          description: Transaction not found
+        "500":
+          description: Internal Server Error
