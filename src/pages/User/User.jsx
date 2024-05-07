@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { selectCurrentToken } from '../../Redux/authSlice';
 import EditUser from '../../components/EditUser/EditUser'
 
+
 function User() {
    
    const token = useSelector(selectCurrentToken);
    const navigate = useNavigate();
 
-   // Si l'utilisateur n'est pas connecté, redirection vers la page de connexion
    useEffect(() => {
       if (!token) {
          navigate("/signin");
@@ -17,12 +17,14 @@ function User() {
    }, [token, navigate]);
 
    return (
-      <main className="main">
+   
+      <main className="main bg-dark">
 
-         <EditUser />
+      <EditUser />
 
-      </main>
-   )
+   </main>
+   
+)
 }
 
 export default User

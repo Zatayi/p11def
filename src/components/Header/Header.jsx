@@ -1,14 +1,16 @@
-import { Link } from 'react-router-dom'
-
-import Account from '../../components/Account/Account'
-import Logo from '../../assets/img/argentBankLogo.png'
-
+import { Link } from 'react-router-dom';
+import Account from '../../components/Account/Account';
+import Logo from '../../assets/img/argentBankLogo.webp';
 
 
-function Header() {
+
+function Header(){
+   
+    
    return (
       
       <header>
+        
          <nav className="main-nav">
 
             <Link to="/">
@@ -21,7 +23,8 @@ function Header() {
             <Account />
 
             
-            </div>            
+            </div>
+            
          </nav>
       </header>
    )

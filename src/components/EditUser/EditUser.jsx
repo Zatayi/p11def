@@ -10,8 +10,8 @@ function EditUser() {
 
    const token = useSelector(selectCurrentToken);
    const user = useSelector(selectCurrentUser);
-   // const firstname = useSelector((state) => state.name.firstname);
-   // const lastname = useSelector((state) => state.name.lastname);
+   //const firstname = useSelector((state) => state.name.firstname);
+   //const lastname = useSelector((state) => state.name.lastname);
 
    const [showForm, setShowForm] = useState(false);
    const [newUsername, setNewUsername] = useState('');
@@ -62,27 +62,14 @@ function EditUser() {
    return (
       <>
          <main className="main bg-dark">
-            <section className="sign-in-content">
+            <div className="header">
                <i className="fa fa-user-circle sign-in-icon"></i>
                <h1>Welcome back {user?.firstname} {user?.lastname}!</h1>
 
                {!showForm && (
-                  <button className="transaction-button button" onClick={toggleForm}>Edit name</button>
+                  <button className="edit-button" onClick={toggleForm}>Edit name</button>
                )}
-            </section>
-
-
-            <section className="account">
-      <div className="account-content-wrapper">
-        
-      </div>
-      <div className="account-content-wrapper cta">
-        <button className="transaction-button">View transactions</button>
-      </div>
-    </section>
-
-
-
+            </div>
          </main>
 
          {showForm && (
@@ -96,9 +83,39 @@ function EditUser() {
                <label>New Username:</label>
                <input type="text" value={newUsername} onChange={handleInputChange} required />
 
-               <button type="submit" className='transaction-button button'>Confirm</button>
+               <button type="transaction-button" className='transaction-button'>Confirm</button>
             </form>
          )}
+         <section className="account">
+      <div className="account-content-wrapper">
+      <h3 className="account-title">Argent Bank Checking (x8349)</h3> 
+      <p className="account-amount">$2,082.79</p>
+      <p className="account-amount-description">Available Balance</p>
+      </div>
+      <div className="account-content-wrapper cta">
+        <button className="transaction-button">View transactions</button>
+      </div>
+    </section>
+    <section className="account">
+      <div className="account-content-wrapper">
+      <h3 className="account-title">Argent Bank Savings (x6712)</h3>
+      <p className="account-amount">$2,082.79</p>
+      <p className="account-amount-description">Available Balance</p>
+      </div>
+      <div className="account-content-wrapper cta">
+        <button className="transaction-button">View transactions</button>
+      </div>
+    </section>
+    <section className="account">
+      <div className="account-content-wrapper">
+      <h3 className="account-title">Argent Bank Checking (x8349)</h3> 
+      <p className="account-amount">$2,082.79</p>
+      <p className="account-amount-description">Available Balance</p>
+      </div>
+      <div className="account-content-wrapper cta">
+        <button className="transaction-button">View transactions</button>
+      </div>
+    </section>
       </>
    );
 }
