@@ -52,7 +52,7 @@ function Connect() {
    return (
       <>
          {user?.username ? (
-            <div className='main-nav'>
+            <div className='main-nav-item'>
                <button className='btn-user' onClick={handleLogout}>Sign out</button>
                <NavLink className='btn-user' to="/user">
                   <i className="fa fa-user-circle"></i>
@@ -60,12 +60,14 @@ function Connect() {
                </NavLink>
             </div>
          ) : (
-            <div className='main-nav'>
-               <NavLink className='btn-user' to="/signin">
+            
+               <NavLink className='main-nav-item' to="/signin">
+               <i className="fa fa-user-circle"></i>
                   <p>Sign In</p>
                </NavLink>
-            </div>
-
+            
+            
+            
          )}
       </>
    )
