@@ -9,7 +9,6 @@ function User() {
    
    const token = useSelector(selectCurrentToken);
    const navigate = useNavigate();
-
    useEffect(() => {
       if (!token) {
          navigate("/signin");

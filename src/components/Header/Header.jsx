@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Account from '../../components/Account/Account';
+import Connect from '../Connect/Connect';
 import Logo from '../../assets/img/argentBankLogo.webp';
 
 
@@ -20,7 +20,7 @@ function Header(){
             
             <div>
             <i className="fa fa-user-circle"/>   
-            <Account />
+            <Connect />
 
             
             </div>
