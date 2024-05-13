@@ -1,4 +1,5 @@
-function Account ( title, amount, description ) {
+function Account(props) {
+    const {title, amount, description} = props;
     return (
         <section className='account'>
             <h2 className='sr-only'>Accounts</h2>
