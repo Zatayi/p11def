@@ -1,5 +1,3 @@
-
-
 function Error() {
    return (
       <main>
