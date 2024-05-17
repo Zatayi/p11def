@@ -67,7 +67,7 @@ function SignIn() {
                   <input className={error ? 'sign-in__error-border' : ''} type="password" id="password" value={password} onChange={handlePasswordChange} required />
                </div>
 
-               {error && <p className="sign-in__error-message">The username or password incorrect</p>}
+               {error && <p className="sign-in__error-message">Username or password incorrect</p>}
 
                <div className="input-remember">
                   <input type="checkbox" id="remember-me" />
