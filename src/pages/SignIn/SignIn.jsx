@@ -13,10 +13,10 @@ function SignIn() {
 
 
    const navigate = useNavigate();
-   const handleUsernameChange = (event) => {
+   const UsernameEdit = (event) => {
       setUsername(event.target.value);
    };
-   const handlePasswordChange = (event) => {
+   const PasswordEdit = (event) => {
       setPassword(event.target.value);
    };
    const handleSignIn = (event) => {
@@ -59,12 +59,12 @@ function SignIn() {
             <form onSubmit={handleSignIn}>
                <div className="input-wrapper">
                   <label htmlFor="username">Username</label>
-                  <input className={error ? 'sign-in__error-border' : ''} type="email" id="username" value={username} onChange={handleUsernameChange} required />
+                  <input className={error ? 'sign-in__error-border' : ''} type="email" id="username" value={username} onChange={UsernameEdit} required />
                </div>
 
                <div className="input-wrapper">
                   <label htmlFor="password">Password</label>
-                  <input className={error ? 'sign-in__error-border' : ''} type="password" id="password" value={password} onChange={handlePasswordChange} required />
+                  <input className={error ? 'sign-in__error-border' : ''} type="password" id="password" value={password} onChange={PasswordEdit} required />
                </div>
 
                {error && <p className="sign-in__error-message">Username or password incorrect</p>}
@@ -74,12 +74,8 @@ function SignIn() {
                   <label htmlFor="remember-me">Remember me</label>
                </div>
 
-
                <button className="sign-in-button" type="submit">Sign In</button>
             </form>
-
-
-
          </section>
       </main>
    );
